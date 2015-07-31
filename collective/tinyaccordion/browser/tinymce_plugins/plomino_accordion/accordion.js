@@ -3,16 +3,14 @@ jQuery(function ($) {
     $("#content-core h3.plomino-accordion-header").each( function (index) {
         var jqt = $(this),
             body = jqt.next('div.plomino-accordion-content'),
-            expand_css = index === 0 ? 'expanded': 'collapsed';
+            expand_css = 'collapsed';
 
         body.addClass(expand_css);
-        if (index !== 0) {
-            jqt.next().hide();
-        }
+        jqt.next().hide();
         jqt.addClass(expand_css);
 
         jqt.click(function (event) {
-			event.preventDefault();
+         event.preventDefault();
             var jqt = $(this),
                 body = jqt.next('div.plomino-accordion-content');
             if (jqt.hasClass('expanded')) {
